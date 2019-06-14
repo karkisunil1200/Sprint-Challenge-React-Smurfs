@@ -1,0 +1,48 @@
+.heading {
+  text-align: center;
+}
+a {
+  color: black;
+  padding: 20px;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.smurf {
+  width: 200px;
+  box-shadow: 0 5px 10px #ccc;
+  margin: 20px 20px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  height: 180px;
+}
+.smurfs-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  flex: 1;
+}
+
+.SmurfForm {
+  box-shadow: 0 4px 8px #ccc;
+  padding: 30px;
+}
+.input {
+  font-size: 18px;
+  padding: 4px 10px;
+  margin-right: 10px;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 5px 20px;
+}
+
+.fas {
+  float: right;
+  color: red;
+}
+.ff {
+  font-size: 17px;
+  float: left;
+}
