@@ -5,6 +5,7 @@ import axios from 'axios';
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
+import UpdateForm from './components/UpdateForm';
 
 class App extends Component {
   constructor(props) {
@@ -54,6 +55,12 @@ class App extends Component {
       });
   };
 
+  getUpdate = smurf => {
+    this.setState({
+      smurf: smurf
+    });
+  };
+
   update = smurf => {
     axios
       .put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
@@ -69,32 +76,29 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className='App'>
-          <nav>
-            <div className='nav-links'>
-              <NavLink to='/'>Home</NavLink>
-              <NavLink to='/form'>Add</NavLink>
-            </div>
-          </nav>
-          <Route
-            path='/'
-            render={props => (
-              <Smurfs
-                {...props}
-                smurfs={this.state.smurfs}
-                delete={this.deleteSmurfs}
-                update={this.update}
-              />
-            )}
-          />
+      <div className='App'>
+        <nav>
+          <div className='nav-links'>
+            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/form'>Add</NavLink>
+          </div>
+        </nav>
+        <Route
+          path='/'
+          render={props => (
+            <Smurfs
+              {...props}
+              smurfs={this.state.smurfs}
+              delete={this.deleteSmurfs}
+              getUpdate={this.update}
+            />
+          )}
+        />
 
-          <Route
-            path='/form'
-            render={props => <SmurfForm {...props} addSmurfs={this.addSmurfs} />}
-          />
-        </div>
-      </Router>
+        <Route path='/form' render={props => <SmurfForm {...props} addSmurfs={this.addSmurfs} />} />
+
+        <Route path='/update' render={props => <UpdateForm {...props} update={this.update} />} />
+      </div>
     );
   }
 }

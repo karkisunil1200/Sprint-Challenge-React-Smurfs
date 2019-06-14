@@ -1,5 +1,6 @@
 import React from 'react';
 import './village.css';
+import {Link} from 'react-router-dom';
 
 const Smurf = props => {
   return (
@@ -9,7 +10,9 @@ const Smurf = props => {
         <h3>{props.name}</h3>
         <strong>{props.height} tall</strong>
         <p>{props.age} smurf years old</p>
-        <i onClick={() => props.update(props.smurf)} class='fas fa-user-edit' />
+        <Link to='/update'>
+          <i onClick={() => props.update(props.smurf)} class='fas fa-user-edit' />
+        </Link>
       </div>
     </div>
   );
