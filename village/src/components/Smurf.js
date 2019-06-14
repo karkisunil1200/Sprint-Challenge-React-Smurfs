@@ -9,6 +9,7 @@ const Smurf = props => {
         <h3>{props.name}</h3>
         <strong>{props.height} tall</strong>
         <p>{props.age} smurf years old</p>
+        <i onClick={() => props.update(props.smurf)} class='fas fa-user-edit' />
       </div>
     </div>
   );

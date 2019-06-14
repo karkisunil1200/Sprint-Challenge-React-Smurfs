@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      smurfs: []
+      smurfs: [],
+      smurf: ''
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -53,6 +54,19 @@ class App extends Component {
       });
   };
 
+  update = smurf => {
+    axios
+      .put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
+      .then(res => {
+        this.setState({
+          smurf: res.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   render() {
     return (
       <Router>
@@ -66,7 +80,12 @@ class App extends Component {
           <Route
             path='/'
             render={props => (
-              <Smurfs {...props} smurfs={this.state.smurfs} delete={this.deleteSmurfs} />
+              <Smurfs
+                {...props}
+                smurfs={this.state.smurfs}
+                delete={this.deleteSmurfs}
+                update={this.update}
+              />
             )}
           />
 
