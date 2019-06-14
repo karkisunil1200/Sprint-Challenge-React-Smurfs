@@ -110,7 +110,7 @@ To update an existing project to a new version of `react-scripts`, [open the cha
 
 In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
 
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
+We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly
 
 ## Sending Feedback
 
