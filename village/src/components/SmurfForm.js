@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './village.css';
+
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
@@ -29,26 +31,31 @@ class SmurfForm extends Component {
   render() {
     return (
       <div className='SmurfForm'>
-        <form onSubmit={this.addSmurf}>
+        <form onSubmit={this.addSmurf} className='form'>
           <input
             onChange={this.handleInputChange}
             placeholder='name'
             value={this.state.name}
             name='name'
+            className='input'
           />
           <input
             onChange={this.handleInputChange}
             placeholder='age'
             value={this.state.age}
             name='age'
+            className='input'
           />
           <input
             onChange={this.handleInputChange}
             placeholder='height'
             value={this.state.height}
             name='height'
+            className='input'
           />
-          <button type='submit'>Add to the village</button>
+          <button type='submit' className='btn'>
+            Add to the village
+          </button>
         </form>
       </div>
     );
