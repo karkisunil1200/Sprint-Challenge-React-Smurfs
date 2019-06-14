@@ -80,7 +80,9 @@ class App extends Component {
         <nav>
           <div className='nav-links'>
             <NavLink to='/'>Home</NavLink>
-            <NavLink to='/form'>Add</NavLink>
+            <NavLink exact to='/form'>
+              Add
+            </NavLink>
           </div>
         </nav>
         <Route
@@ -97,7 +99,10 @@ class App extends Component {
 
         <Route path='/form' render={props => <SmurfForm {...props} addSmurfs={this.addSmurfs} />} />
 
-        <Route path='/update' render={props => <UpdateForm {...props} update={this.update} />} />
+        <Route
+          path='/update'
+          render={props => <UpdateForm {...props} update={this.update} smurf={this.state.smurf} />}
+        />
       </div>
     );
   }

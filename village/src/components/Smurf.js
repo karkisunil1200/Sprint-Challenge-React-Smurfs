@@ -11,7 +11,7 @@ const Smurf = props => {
         <strong>{props.height} tall</strong>
         <p>{props.age} smurf years old</p>
         <Link to='/update'>
-          <i onClick={() => props.update(props.smurf)} class='fas fa-user-edit' />
+          <i onClick={() => props.update(props.smurf)} class='ff fas fa-user-edit' />
         </Link>
       </div>
     </div>
