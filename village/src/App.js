@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
@@ -44,6 +44,12 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
+          <nav>
+            <div className='nav-links'>
+              <NavLink to='/'>Home</NavLink>
+              <NavLink to='/form'>Add</NavLink>
+            </div>
+          </nav>
           <Route path='/' render={props => <Smurfs {...props} smurfs={this.state.smurfs} />} />
 
           <Route
